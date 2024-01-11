@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """module for tpe checking"""
-from typing import Tuple, Any, Union, List
+from typing import Tuple, Any, List
 
 
 def zoom_array(lst: Tuple,
                factor: int = 2) -> List:
     """Type Checking
     Keyword arguments:
-    lst (tuple): a tuple input
+    lst (Tuple): a tuple input
     factor (int): a int input
-    Return: a tuple
+    Returns: a tuple
     """
     zoomed_in: Tuple[Any, ...] = tuple(
         item for item in lst
