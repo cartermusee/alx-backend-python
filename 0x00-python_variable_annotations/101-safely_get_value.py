@@ -9,10 +9,10 @@ def safely_get_value(dct: Mapping,
     """ More involved type annotations
 
     Keyword arguments:
-    dct (mapping): mapping input
-    key (any): any tpe
-    default (union[T,none]): default parameter
-    Returns:  values, add type annotations to the function
+    dct (Mapping): mapping input
+    key (Any): any tpe
+    default (Union[T,none]): default parameter
+    Returns:values, add type annotations to the function
     """
     if key in dct:
         return dct[key]
