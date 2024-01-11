@@ -4,6 +4,12 @@ from typing import Tuple, Any, Union, List
 
 def zoom_array(lst: Tuple,
                factor: int = 2) -> List:
+    """Type Checking
+    Keyword arguments:
+    lst (tuple): a tuple input
+    factor (int): a int input
+    Return: a tuple
+    """
     zoomed_in: Tuple[Any, ...] = tuple(
         item for item in lst
         for i in range(int(factor))

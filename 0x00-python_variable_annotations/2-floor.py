@@ -7,7 +7,7 @@ def floor(n: float) -> float:
     """convert a flaot by floor method
 
     Keyword arguments:
-      n (float): the imput
+      n (float): the input
     Returns: floar of  input float
     """
     return math.floor(n)
