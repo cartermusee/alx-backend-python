@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""module for typevar"""
 from typing import List, TypeVar, Mapping, Any, Union
 T = TypeVar('T')
 
