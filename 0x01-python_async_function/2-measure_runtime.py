@@ -9,7 +9,7 @@ def measure_time(n: int, max_delay: int) -> float:
     """Measure the runtime
     Keyword arguments:
     n: number of times
-    mex_delay: delays
+    max_delay: delays
     Returns: total time dive by number of times
     """
     start = time.time()
