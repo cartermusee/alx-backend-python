@@ -10,7 +10,7 @@ def measure_time(n: int, max_delay: int) -> float:
     Keyword arguments:
     n: number of times
     mex_delay: delays
-    Return: total time dive by number of times
+    Returns: total time dive by number of times
     """
     start = time.time()
     asyncio.run(wait_n(n, max_delay))
