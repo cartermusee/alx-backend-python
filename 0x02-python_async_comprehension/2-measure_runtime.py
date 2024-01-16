@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """module for parell comprehesions"""
 import asyncio
 import time
