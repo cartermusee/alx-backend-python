@@ -2,10 +2,10 @@
 """module for Async Generator"""
 import asyncio
 import random
-from typing import List
+from typing import List, AsyncGenerator
 
 
-async def async_generator() -> List[float]:
+async def async_generator() -> AsyncGenerator[float, None]:
     """Async Generator
     Returns: list of floats
     """
