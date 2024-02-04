@@ -60,12 +60,13 @@ class TestMemoize(unittest.TestCase):
         class TestClass:
             def a_method(self):
                 return 42
+
             @memoize
             def a_property(self):
                 return self.a_method()
         with patch.object(TestClass,
                           "a_method",
-                          return_value = lambda: 42,
+                          return_value=lambda: 42,
                           ) as memo:
             test_class = TestClass()
             result1 = test_class.a_property()
