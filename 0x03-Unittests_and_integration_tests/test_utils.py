@@ -53,9 +53,8 @@ class TestGetJson(unittest.TestCase):
 
 class TestMemoize(unittest.TestCase):
     """TestMemoize class"""
-
     @patch("utils.memoize")
-    def test_memoize(self, mock_memoize):
+    def test_memoize(self) -> None:
         """Test memoization behavior."""
 
         class TestClass:
