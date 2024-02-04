@@ -38,8 +38,8 @@ class TestGithubOrgClient(unittest.TestCase):
     @patch("client.GithubOrgClient._public_repos_url",
            new_callable=PropertyMock)
     def test_public_repos(self,
-                          moc_pub_repos,
-                          mock_json):
+                          moc_pub_repos: MagicMock,
+                          mock_json: MagicMock):
         """Test GithubOrgClient.public_repos."""
         moc_pub_repos.return_value = "https://api.github.com/orgs/google/repos"
         expected_payload = [{"name": "repo1"}, {"name": "repo2"}]
@@ -52,3 +52,16 @@ class TestGithubOrgClient(unittest.TestCase):
         mock_json.assert_called_once_with("https://api.github.com\
                                           /orgs/google/repos")
         moc_pub_repos.assert_called_once()
+
+    @parameterized.expand([
+        ({"license": {"key": "my_license"}}, "my_license", True),
+        ({"license": {"key": "other_license"}}, "my_license", False),
+    ])
+    def test_has_license(self,
+                         repo: Dict,
+                         license_key: str,
+                         expected_result: bool):
+        """Test GithubOrgClient.has_license."""
+        client = GithubOrgClient("google")
+        result = client.has_license(repo, license_key)
+        self.assertEqual(result, expected_result)
