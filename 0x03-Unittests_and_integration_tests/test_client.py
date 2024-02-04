@@ -9,8 +9,8 @@ from client import GithubOrgClient
 class TestGithubOrgClient(unittest.TestCase):
     """TestGithubOrgClient class"""
     @parameterized.expand([
-        ("google", "https://api.github.com/orgs/google"),
-        ("abc", "https://api.github.com/orgs/abc")
+        ("google", {'login': "google"}),
+        ("abc", {'login': "abc"})
     ])
     @patch("utils.get_json")
     def test_org(self, org_name, expected_url, mock_get_json):
