@@ -71,5 +71,5 @@ class TestMemoize(unittest.TestCase):
             test_class = TestClass()
             result1 = test_class.a_property()
             result2 = test_class.a_property()
-            self.assertEqual(result1, result2)
+            self.assertEqual(result1, result2, 42)
             memo.assert_called_once()
